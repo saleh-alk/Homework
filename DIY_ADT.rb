@@ -9,7 +9,7 @@ class Stack
     def push(el)
       # adds an element to the stack
       if !@stack.include?(el)
-        @stack << el
+        @stack.push(el)
       end
     end
 
