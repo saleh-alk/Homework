@@ -11,6 +11,7 @@ class Stack
       if !@stack.include?(el)
         @stack.push(el)
       end
+      self
     end
 
     def pop
@@ -32,13 +33,14 @@ p b.stack
 
 
 class Queue
-    attr_reader :queue
+
     def initialize
         @queue = Array.new()
     end
 
     def enque(el)
         @queue << el if !@queue.include?(el)
+        self
     end
 
     def dequeue
@@ -48,12 +50,16 @@ class Queue
     def peek
         @queue[-1]
     end
+
+    private
+    attr_reader :queue
 end
 
 c = Queue.new
 p c.enque('dog')
 p c.enque('d')
 p c.dequeue
+p c.queue
 
 
 class Map
