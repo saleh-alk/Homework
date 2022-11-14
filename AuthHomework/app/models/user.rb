@@ -5,6 +5,9 @@ class User < ApplicationRecord
     validates :password_digest, presence: {message: "Password can't be blank"}
     validates :password, length: { minimum: 8, allow_nil: true }
 
+
+    attr_reader :password
+
     def self.find_by_credentials
         user = User.find_by(username: username)
 
