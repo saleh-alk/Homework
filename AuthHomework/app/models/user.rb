@@ -12,12 +12,16 @@ class User < ApplicationRecord
 
     end
 
+    def password=(password)
+        BCrypt::Password.new(password_digest).is_password?(password)
+    end
+
     def is_password?(password)
         BCrypt::Password.new(password_digest).is_password?(password)
     end
 
     def generate_unique_session_token
-        
+
 
     end
 
