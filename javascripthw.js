@@ -111,8 +111,8 @@ function sumOfNPrimes(num){
     
     
     let sum = 0
-    for(let i = 2; i === num + 1; i++ ){
-        
+    for(let i = 2; i < num+1 ; i++ ){
+      
         if (isPrime(i)){
             sum += i
         }
@@ -122,4 +122,4 @@ function sumOfNPrimes(num){
     
 }
 
-console.log(sumOfNPrimes(12))
+console.log(sumOfNPrimes(3))
